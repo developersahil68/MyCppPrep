@@ -10,7 +10,6 @@ void mergeSortedArray(vector<int> v1 , int m , vector<int> v2, int n){
  
     int i = 0;
     int j = 0;
-    // int i = 0;
 
     while(i<m && j < n){
         if(v1[i] < v2[j]){
@@ -36,46 +35,6 @@ void mergeSortedArray(vector<int> v1 , int m , vector<int> v2, int n){
     }
 
  
-  
-
-    // int ptr1 = v1[0];
-    // int ptr2 = v2[0];
-    // int ptr3 = res[-1];
-    
-    // for(int i =0 ; i < (m+n) ; i++){
-    //    if(v1[i] < v2[i]){
-    //     res.push_back(v1[i]);
-    //     ptr1++;
-    //     ptr3++;
-    // }else{
-    //     res.push_back(v2[i]);
-    //     ptr2++;
-    //     ptr3++;
-    //    }
-    // }
-
-    // for(int i = 0 ; i < (m+n) ; i++){
-    //     for(int  j = 0; j < (m+n) ; j++) {
-    //     int ptr1 = v1[i];
-    //     int ptr2 = v2[j];
-    //     if(v1[i] < v2[j]){
-    //     res.push_back(v1[i]);
-    //     ptr1++;
-    //     // ptr3++;
-    //     i++;
-    // }else{
-    //     res.push_back(v2[i]);
-    //     ptr2++;
-    //     // ptr3++;
-    //     j++;
-    //    }
-    //     }
-    // }
-
-    // for(int j = 0 ; j< (m+n) ; j++) {
-    //     cout<<res[j];
-    // }
-
 
 }
 
