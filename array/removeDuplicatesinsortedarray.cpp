@@ -5,18 +5,19 @@ using namespace std;
 // removes duplicates from sorted array
 
 int main() {
-    vector<int> v = {1 , 4 , 5 ,5 , 5, 7 , 9 , 9};
+    vector<int> nums = {1 , 4 , 5 ,5 , 5, 7 , 9 , 9};
 
-    for(int i = 0 ; i < v.size()-1;) {
-        if(v[i] == v[i+1]){
-         
-          v.erase(v.begin()+i);
-        }else{
-            i++;
+    int j = 0;
+
+    for(int i = 1; i< nums.size(); i++){
+        if(nums[i] != nums[j]){
+            j++;
+            nums[j] = nums[i];
         }
     }
-    for(int j = 0 ; j < v.size() ; j++) {
-        cout<<v[j]<<" ";
-    }
-    return 0;
+
+          for(int k = 0 ; k < j+1 ; k++) {
+        cout<<nums[k]<<" ";
+          }
 }
+
