@@ -9,8 +9,6 @@ using namespace std;
 
 int main()
 {
-    // vector<int> nums = {2, 3, 5, -2, 7, -4};
-    // vector<int> nums = {-2, -3, -7, -2, -10, -4};
     vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4};
     int sum = 0;
     int finalSum = INT_MIN;
@@ -26,6 +24,25 @@ int main()
     cout<<finalSum;
     return finalSum;
 };
+
+
+
+// kadane algorithm
+
+//   int sum = 0;
+//     int finalSum = nums[0];
+
+//     for(int i = 0; i < nums.size() ; i++){
+//         sum += nums[i];
+//         finalSum = max(sum , finalSum);
+//         if(sum <0){
+//             sum = 0;
+//         }
+//     }
+
+  
+//     return finalSum;
+
 
 
 
