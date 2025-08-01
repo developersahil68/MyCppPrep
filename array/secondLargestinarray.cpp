@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int arr[6] = {4 , 4, 21 , 14 , -45 , -5};
+    int arr[6] = {4 , 4, 21 , 14 , -45 , 25};
     // int arr[6] = {4 , 4,4 , 4 , 4 , 4};
     int largestElement = arr[0];
     int secondLargestElement = INT_MIN;
