@@ -9,8 +9,9 @@ using namespace std;
 int main()
 {
     // vector<int> nums = {0, 3, 7, 2, 5, 8, 4, 6, 0, 1};
-    vector<int> nums = {1,0,1,2};
+    vector<int> nums = {1,0,1,2 , 1};
     int n = nums.size();
+    // answer = 3 
 
     sort(nums.begin() , nums.end());
     int count = 1;
