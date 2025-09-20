@@ -62,16 +62,16 @@ void insertAtPosition(Node* &head, int val, int pos) {
     temp->next = new_node;
 }
 
-void updateAtPosition(Node* &head, int k ,int val){
-    Node* temp = head;
-    int curr_pos = 0;
+// void updateAtPosition(Node* &head, int k ,int val){
+//     Node* temp = head;
+//     int curr_pos = 0;
 
-    while(curr_pos!=k){
-        temp=temp->next;
-        curr_pos++;
-    }
-    temp->val = val;
-}
+//     while(curr_pos!=k){
+//         temp=temp->next;
+//         curr_pos++;
+//     }
+//     temp->val = val;
+// }
 
 
 void deleteAtHead(Node* &head) {
