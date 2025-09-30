@@ -37,7 +37,6 @@ void printList(ListNode* head) {
 }
 
 int main() {
-    // Created a linked list: 1 -> 2 -> 3 -> 4 -> 5
     ListNode* head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
 
 
@@ -47,7 +46,6 @@ int main() {
     std::cout << "List: ";
     printList(head1);
     ListNode* middle1 = solution.reverseList(head1);
-    // std::cout << "Middle node value: " << middle1->val << std::endl; // Should print 3
     printList(middle1);
 
     std::cout << "\n";
