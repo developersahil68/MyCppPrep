@@ -1,4 +1,6 @@
 #include<iostream>
+#include<unordered_map>
+using namespace std;
 
 
   struct ListNode {
@@ -9,19 +11,18 @@
  
  class Solution {
 public:
-    bool hasCycle(ListNode *head) {
-        ListNode * fast = head;
-        ListNode * slow = head;
+    ListNode* detectCycle(ListNode *head) {
+        unordered_map<ListNode * , int> mpp;
+        ListNode* temp = head;
 
-        while(fast!=NULL && fast->next!=NULL){
-           slow = slow->next;
-           fast = fast->next->next;
-
-           if(fast == slow){
-            return true;
-           }
+        while(temp != NULL){
+            if(mpp.find(temp) != mpp.end()){
+                return temp;
+            }
+            mpp[temp] = 1;
+            temp = temp->next;
         }
-        return false;
+        return NULL;
     }
 };
 
@@ -47,7 +48,16 @@ int main() {
 
     std::cout << "List: ";
     printList(head1);
-    bool has_cycle1 = solution.hasCycle(head1);
-    std::cout << "Has cycle? " << std::boolalpha << has_cycle1 << std::endl;
+    
+    ListNode* cycle_node = solution.detectCycle(head1);
+    
+    bool has_cycle = (cycle_node != nullptr);
+    
+    std::cout << "Has cycle? " << std::boolalpha << has_cycle << std::endl;
+    
+    if (cycle_node) {
+        std::cout << "Cycle starts at node with value: " << cycle_node->val << std::endl;
+    }
+
     return 0;
 }
