@@ -35,11 +35,11 @@ public:
     Node* addOne(Node* head) { 
      int carry = addHelper(head);
  
-   if(carry == 1) {
+      if(carry == 1) {
       Node* newNode = new Node(1);
       newNode->next = head;
       head = newNode;
-   }
+      }
       return head;
     }
 
