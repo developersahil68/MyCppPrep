@@ -68,3 +68,4 @@ int main() {
    
     return 0;
 }
+// was not able to solve in one go 
