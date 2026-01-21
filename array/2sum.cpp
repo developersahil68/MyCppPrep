@@ -12,8 +12,9 @@ vector<int> twoSum(vector<int> &nums , int target){
     if(numMap.find(complement) != numMap.end()){
         return {numMap[complement] , i};
     }
-    return {};
-   }
+    numMap[nums[i]] = i;
+}
+return {};
 }
 
 int main() {
