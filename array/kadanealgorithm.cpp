@@ -10,19 +10,25 @@ using namespace std;
 int main()
 {
     vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4};
-    int sum = 0;
-    int finalSum = INT_MIN;
+  int sum = 0;
+    int finalSum = nums[0];
 
-    for(int j = 0; j < nums.size()  ; j ++){
+     int start = 0;
+     int end = 0;
 
-        for(int i = j; i<nums.size() ; i++){
-                sum += nums[i];
-                finalSum = max(sum , finalSum);
+    for(int i = 0; i < nums.size() ; i++){
+        int start = nums[i];
+        sum += nums[i];
+        finalSum = max(sum , finalSum);
+        if(sum <0){
+            int end = nums[i];
+            sum = 0;
         }
-        sum = 0;
     }
-    cout<<finalSum;
+
+  
     return finalSum;
+
 };
 
 
