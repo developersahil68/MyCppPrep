@@ -1,6 +1,28 @@
 #include<iostream>
 #include<vector>
+#include<unordered_map>
 using namespace std;
+
+
+class Solution {
+ 
+   public:
+    int subarraySumEqualToK(vector<int> &nums , int k ) {
+      unordered_map<int , int > mpp;
+      mpp[0] = 1;
+
+      int cnt = 0;
+      int preSum = 0;
+
+      for(int i = 0 ; i < nums.size() ; i++) {
+          preSum += nums[i];
+          int remove = preSum - k;
+          cnt += mpp[remove]; // this line is checking if it contains remove then add it in count and if it does not then create new with remove , 0
+       mpp[preSum] += 1;
+      }
+ return cnt ;
+    }
+};
 
 int main()
 {
@@ -28,28 +50,4 @@ int main()
      return 0;
     };
     
-    // for(int i = 0 ; i < n ; i++){
-    //    sum = sum + nums[i];
-    //    if(sum == k ){
-    //        count++;
-    //        sum = 0;
-    //    }
-    //    if(nums[i] == nums[i+1]){
-    //        i++;
-    //    }
-    // }
-
-
-    // for(int i = 0 ; i < n ; i++){
-    //     for(int j = i + 1 ; j < n; j++) {
-    //         if(nums[i] + nums[j] == k  ){
-    //             count++;
-    //             break;
-    //         }
-    //      }
-    //     }
-    //     for(int i = 0 ; i < n ; i++) {
-    //         if(nums[i] == k){
-    //             count++;
-    //         }
-    //     }
+  
