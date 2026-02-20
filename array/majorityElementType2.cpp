@@ -27,6 +27,8 @@ int main()
         }
     }
 
+    // core logic finished
+
     vector<int> ls;
     cnt1 = 0, cnt2 = 0;
 
