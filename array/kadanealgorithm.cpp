@@ -13,15 +13,14 @@ int main()
   int sum = 0;
     int finalSum = nums[0];
 
-     int start = 0;
-     int end = 0;
+   
 
     for(int i = 0; i < nums.size() ; i++){
-        int start = nums[i];
+       
         sum += nums[i];
         finalSum = max(sum , finalSum);
         if(sum <0){
-            int end = nums[i];
+          ;
             sum = 0;
         }
     }

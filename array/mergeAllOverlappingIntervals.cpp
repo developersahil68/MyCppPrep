@@ -10,25 +10,25 @@ int main()
       if (intervals.empty()) {
      // return {}; // Or print nothing
         return 0;
-    }
+    };
 
     sort(intervals.begin() , intervals.end());
 
-    vector<vector<int>> mergedIntervals;
-    mergedIntervals.push_back(intervals[0]);
     vector<vector<int>> ans;
-    for(int i = 1 ; i<n ; i++){
-     vector<int>& lastInterval = mergedIntervals.back();
-
-     vector<int>& curentInterval = intervals[i];
-
-     if(curentInterval[0] <= lastInterval[1]){
-        lastInterval[1] = max(lastInterval[1] , curentInterval[1]);
+    for(int i = 0 ; i<n ; i++){
+     if(ans.empty() || intervals[i][0] > ans.back()[1]){
+       ans.push_back(intervals[i]);
      }else{
-        mergedIntervals.push_back(curentInterval);
+      ans.back()[1] = max(ans.back()[1] , intervals[i][1]);
      }
     }
 
+      for (const auto& row : ans) {
+        for (int element : row) {
+            std::cout << element << " ";
+        }
+        std::cout << std::endl; 
+    }
 
     
     return 0;
@@ -59,7 +59,7 @@ int main()
 
 //     }
 
-
+// time complexity for brute force is nlogn + 2n
     
 //     return 0;
 // };

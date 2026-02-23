@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<climits>
+#include<map>
 #include<algorithm>
 using namespace std;
 
@@ -9,19 +10,22 @@ using namespace std;
 int main()
 {
   vector<int> nums = {4, 2, 2, 6, 4};
+           int k = 6;
            int n = nums.size();
+           int xr = 0;   
+           map<int , int> mpp;
+           mpp[xr]++;
+
         int count = 0;
         for(int i = 0 ;i < n ; i++){
-           int xor =0;
-            for(int j = i+1 ; j < n ;j++){
-                xor = xor^nums[j];
-                
-                 if(xor == target){
-                    count++;
-                 }
-            }
+           xr = xr ^ nums[i];
+
+           int x = xr ^ k;
+           count += mpp[x];
+           mpp[xr]++;
+         
         }
-        return count;
+        cout<<count;
     
     return 0;
 };
