@@ -3,35 +3,33 @@
 
 using namespace std;
 
-void mergeSortedArray(vector<int> v1 , int m , vector<int> v2, int n){
+void mergeSortedArray(vector<int> &v1 , int m , vector<int> &v2, int n){
 
-    vector<int> res;
+    int p1 = m-1;
+    int p2 = n-1;
+    int p = m+n-1;
 
- 
-    int i = 0;
-    int j = 0;
 
-    while(i<m && j < n){
-        if(v1[i] < v2[j]){
-            res.push_back(v1[i]);
-            i++;
+    while(p1 >= 0 && p2 >=0){
+        if(v1[p1] > v2[p2]){
+            v1[p] = v1[p1];
+            p1--;
         }else{
-            res.push_back(v2[j]);
-            j++;
+            v1[p] = v2[p2];
+            p2--;
         }
+        p--;
     }
 
-    while(i<m){
-         res.push_back(v1[i]);
-            i++;
+    while(p2 >= 0){
+      v1[p] = v2[p2];
+            p2--;
+            p--;
     }
-    while(j<n){
-           res.push_back(v2[j]);
-            j++;
-    }
+  
 
     for (int i = 0 ; i < (m+n) ; i++){
-        cout<<res[i]<<" ";
+        cout<<v1[i]<<" ";
     }
 
  
@@ -39,18 +37,12 @@ void mergeSortedArray(vector<int> v1 , int m , vector<int> v2, int n){
 }
 
 int main() {
-    int m ;
-    int n;
-    cout<<"Enter the size of first vector"<<"\n";
-    cin>>m;
-    cout<<"Enter the size of second vector"<<"\n";
-    cin>>n;
+    int m = 4 ;
+    int n = 4;
 
-    vector<int> v1(m);
-    vector<int> v2(n);
 
-    v1 = {2 , 5 , 7 , 11};
-    v2 = {3 , 4 , 9 , 10};
+    vector<int> v1 = {2, 5, 7, 11, 0, 0, 0, 0};
+    vector<int> v2 = {3, 4, 9, 10};
     mergeSortedArray(v1  , m , v2 , n);
     return 0;
 }
