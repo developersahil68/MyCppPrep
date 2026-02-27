@@ -21,7 +21,7 @@ class Solution{
             vis[i][j] = 0;
         }
         // left
-        if(j+1>=0 && !vis[i][j-1] && a[i][j-1] == 1){
+        if(j-1>=0 && !vis[i][j-1] && a[i][j-1] == 1){
             vis[i][j] = 1;
             solve(i , j-1 , a , n  , ans, move + 'L' , vis);
             vis[i][j] = 0;
