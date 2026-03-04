@@ -12,7 +12,7 @@ int main() {
     int high = n-1;
     int ans = n;
     
-    while(low<high){
+    while(low<=high){
         int mid = (low+high)/2;
         // if(nums[mid] == x) {
         //     cout<<mid;

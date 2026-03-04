@@ -4,28 +4,47 @@
 #include<algorithm>
 using namespace std;
 
-int main()
-{
-    vector<int>  nums = {-1};
-         int n = nums.size();
+class Solution{
+    public:
+    int  maxProduct(vector<int> &nums){
+        int n = nums.size();
+        int prefix = 1, suffix = 1;
+        int maxProd = INT_MIN;
 
-        // if(n==1) return nums[0];
+        for(int i = 0 ; i < nums.size() ; i++) {
+            if(suffix == 0) suffix = 1;
+            if(prefix == 0) prefix = 1;
+            prefix = prefix * nums[i];
+            suffix = suffix * nums[n-i+1];
 
-        int maxPro = INT_MIN;
-
-        for(int i = 0 ; i<n ;i++){
-        int pro = nums[i];
-            for(int j = i+ 1; j< n ; j++){
-                 pro = pro*nums[j];
-                 maxPro = max(pro , maxPro); 
-            }
+            maxProd = max(maxProd , max(suffix , prefix));
         }
 
-        int maxNum = INT_MIN;
-        for(int i = 0 ;i < n ; i++){
-            maxNum = max(nums[i] , maxNum);
-        }
-        int ans = max(maxNum , maxPro);
-        cout<<ans;
-    return 0;
+     }
 };
+
+// int main()
+// {
+//     vector<int>  nums = {-1};
+//          int n = nums.size();
+
+//         // if(n==1) return nums[0];
+
+//         int maxPro = INT_MIN;
+
+//         for(int i = 0 ; i<n ;i++){
+//         int pro = nums[i];
+//             for(int j = i+ 1; j< n ; j++){
+//                  pro = pro*nums[j];
+//                  maxPro = max(pro , maxPro); 
+//             }
+//         }
+
+//         int maxNum = INT_MIN;
+//         for(int i = 0 ;i < n ; i++){
+//             maxNum = max(nums[i] , maxNum);
+//         }
+//         int ans = max(maxNum , maxPro);
+//         cout<<ans;
+//     return 0;
+// };
