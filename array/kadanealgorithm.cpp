@@ -20,12 +20,11 @@ int main()
         sum += nums[i];
         finalSum = max(sum , finalSum);
         if(sum <0){
-          ;
+          
             sum = 0;
         }
     }
 
-  
     return finalSum;
 
 };
