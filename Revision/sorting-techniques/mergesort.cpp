@@ -9,7 +9,7 @@ void merge(vector<int> &nums , int left , int mid, int right ){
 
     while(low <= mid && high <= right){
 
-        if(nums[low] > nums[high]){
+        if(nums[low] < nums[high]){
             ans.push_back(nums[low]);
             low++;
         }else{
@@ -28,7 +28,7 @@ void merge(vector<int> &nums , int left , int mid, int right ){
             high++;
     }
 
-    for(int i = left ; i < right; i++){
+    for(int i = left ; i <= right; i++){
         nums[i] = ans[i - left];
     }
 
